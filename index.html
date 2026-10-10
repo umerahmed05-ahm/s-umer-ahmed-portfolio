@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="S Umer Ahmed - Computer Science and Data Science Portfolio">
+<meta name="keywords" content="Data Science, Machine Learning, AI, Portfolio">
+<meta name="author" content="S Umer Ahmed">
+
+<title>S Umer Ahmed | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+overflow-x:hidden;
+}
+
+:root{
+--primary:#00d4ff;
+--secondary:#7b61ff;
+--accent:#00ffb2;
+--glass:rgba(255,255,255,0.08);
+}
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:700;
+color:var(--primary);
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+nav a:hover{
+color:var(--primary);
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:0 10%;
+gap:60px;
+background:
+radial-gradient(circle at top left,#7b61ff22,transparent 40%),
+radial-gradient(circle at bottom right,#00d4ff22,transparent 40%);
+}
+
+.hero-img img{
+width:320px;
+height:320px;
+object-fit:cover;
+border-radius:50%;
+border:5px solid var(--primary);
+box-shadow:0 0 40px #00d4ff55;
+}
+
+.hero-content h1{
+font-size:4rem;
+}
+
+.hero-content h1 span{
+color:var(--primary);
+}
+
+.hero-content h2{
+font-size:1.8rem;
+margin-top:10px;
+color:#ccc;
+}
+
+.hero-content p{
+margin-top:20px;
+line-height:1.8;
+max-width:600px;
+}
+
+.btns{
+margin-top:30px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 25px;
+margin-right:15px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.primary{
+background:linear-gradient(45deg,var(--primary),var(--secondary));
+color:white;
+}
+
+.secondary{
+border:2px solid var(--primary);
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+section{
+padding:100px 10%;
+}
+
+.section-title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:50px;
+color:var(--primary);
+}
+
+.glass{
+background:var(--glass);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:20px;
+padding:30px;
+}
+
+.about p{
+line-height:2;
+font-size:1.1rem;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skill-card{
+padding:25px;
+border-radius:15px;
+background:var(--glass);
+transition:.4s;
+}
+
+.skill-card:hover{
+transform:translateY(-8px);
+}
+
+.progress{
+height:8px;
+background:#222;
+border-radius:20px;
+margin-top:10px;
+}
+
+.progress span{
+display:block;
+height:100%;
+border-radius:20px;
+background:linear-gradient(90deg,var(--primary),var(--secondary));
+}
+
+.timeline{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.timeline-item{
+padding:25px;
+background:var(--glass);
+border-left:4px solid var(--primary);
+border-radius:15px;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.project-card{
+background:var(--glass);
+padding:25px;
+border-radius:20px;
+transition:.4s;
+}
+
+.project-card:hover{
+transform:translateY(-10px);
+}
+
+.project-card h3{
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+color:var(--primary);
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#050505;
+margin-top:50px;
+}
+
+.socials{
+margin-top:20px;
+}
+
+.socials a{
+margin:0 10px;
+font-size:20px;
+color:white;
+text-decoration:none;
+}
+
+.counter-section{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.counter{
+text-align:center;
+padding:30px;
+background:var(--glass);
+border-radius:20px;
+}
+
+.counter h3{
+font-size:2rem;
+color:var(--primary);
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+padding-top:120px;
+text-align:center;
+height:auto;
+}
+
+.hero-content h1{
+font-size:2.7rem;
+}
+
+nav ul{
+display:none;
+}
+
+.hero-img img{
+width:250px;
+height:250px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="logo">SUA</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+
+<div class="hero-img">
+<img src="images/profile.jpg" alt="S Umer Ahmed"></div>
+<div class="hero-content">
+<h1>S <span>Umer Ahmed</span></h1>
+
+<h2 id="typing"></h2>
+
+<p>
+Transforming Data into Insights Through Analytics & AI.
+Passionate Computer Science and Data Science undergraduate focused on Machine Learning, Artificial Intelligence, Data Analytics and Software Development.
+</p>
+
+<div class="btns">
+<a href="#projects" class="btn primary">View Projects</a>
+<a href="#" class="btn secondary">Download Resume</a>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="counter-section">
+
+<div class="counter">
+<h3>5+</h3>
+<p>Projects</p>
+</div>
+
+<div class="counter">
+<h3>10+</h3>
+<p>Skills</p>
+</div>
+
+<div class="counter">
+<h3>3+</h3>
+<p>Certifications</p>
+</div>
+
+<div class="counter">
+<h3>2028</h3>
+<p>Graduation</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="glass about">
+
+<p>
+I am a passionate B.Tech undergraduate in Computer Science and Data Science at Presidency University, Bangalore.
+My interests include Machine Learning, Artificial Intelligence, Data Analytics and Software Development.
+I enjoy transforming raw data into meaningful insights and creating impactful solutions for real-world challenges.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+Python
+<div class="progress"><span style="width:90%"></span></div>
+</div>
+
+<div class="skill-card">
+Machine Learning
+<div class="progress"><span style="width:85%"></span></div>
+</div>
+
+<div class="skill-card">
+SQL
+<div class="progress"><span style="width:88%"></span></div>
+</div>
+
+<div class="skill-card">
+Pandas
+<div class="progress"><span style="width:87%"></span></div>
+</div>
+
+<div class="skill-card">
+NumPy
+<div class="progress"><span style="width:85%"></span></div>
+</div>
+
+<div class="skill-card">
+Power BI
+<div class="progress"><span style="width:80%"></span></div>
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Presidency University, Bangalore</h3>
+<p>B.Tech - Computer Science and Data Science</p>
+<p>Expected Graduation: 2028</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="project-card">
+<h3>Titanic Survival Prediction</h3>
+<p>Machine Learning model predicting passenger survival.</p>
+</div>
+
+<div class="project-card">
+<h3>Student Performance Dashboard</h3>
+<p>Analytics dashboard using Python and Power BI.</p>
+</div>
+
+<div class="project-card">
+<h3>Customer Churn Prediction</h3>
+<p>Classification model for customer retention.</p>
+</div>
+
+<div class="project-card">
+<h3>Sales Forecasting System</h3>
+<p>Predictive analytics using time-series techniques.</p>
+</div>
+
+<div class="project-card">
+<h3>AI Recommendation System</h3>
+<p>Recommendation engine powered by Machine Learning.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="glass contact">
+
+<h3>S Umer Ahmed</h3>
+
+<p>Email:
+<a href="mailto:umairahmed6053@gmail.com">
+umairahmed6053@gmail.com
+</a>
+</p>
+
+<p>Presidency University, Bangalore</p>
+
+<div class="socials">
+<a href="#">LinkedIn</a>
+<a href="#">GitHub</a>
+<a href="#">Email</a>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 S Umer Ahmed | Portfolio
+</footer>
+
+<script>
+
+const texts=[
+"Computer Science & Data Science Student",
+"Aspiring Data Scientist",
+"AI Enthusiast",
+"Machine Learning Learner"
+];
+
+let count=0;
+let index=0;
+let currentText='';
+let letter='';
+
+(function type(){
+
+if(count===texts.length){
+count=0;
+}
+
+currentText=texts[count];
+letter=currentText.slice(0,++index);
+
+document.getElementById('typing').textContent=letter;
+
+if(letter.length===currentText.length){
+count++;
+index=0;
+setTimeout(type,1500);
+}
+else{
+setTimeout(type,100);
+}
+
+})();
+
+</script>
+
+</body>
+</html>
